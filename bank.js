@@ -23,6 +23,16 @@ Bank.prototype = {
     });
 
     return foundAccount;
+  },
+  findLargestAccount: function(){
+    var largestAccount = this.accounts.reduce(function(largestAccount, account){
+
+      if (account.balance > largestAccount.balance){
+        return account;
+      }
+      return largestAccount;
+    })
+    return largestAccount;
   }
 };
 

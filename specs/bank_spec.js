@@ -46,7 +46,7 @@ describe( "Bank", function() {
 
   it("should return cookiesAccount from findLargestAccount()", function() {
     var largestAccount = myPopulatedBank.findLargestAccount();
-    assert.equal( cookiesAccount, foundAccount );
+    assert.equal( cookiesAccount, largestAccount );
   });
 
 });
