@@ -15,6 +15,11 @@ describe( "Bank", function() {
 
   it("should have numberOfAccounts equal zero at start", function(){
     assert.equal( 0, myBank.numberOfAccounts() );
-  })
+  });
+
+  it("should increase numberOfAccounts when account added", function() {
+    myBank.addAccount( "Matthew", 5000, "savings" );
+    assert.equal( 1, myBank.numberOfAccounts() );
+  });
 
 });
