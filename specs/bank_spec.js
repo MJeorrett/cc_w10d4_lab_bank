@@ -22,4 +22,15 @@ describe( "Bank", function() {
     assert.equal( 1, myBank.numberOfAccounts() );
   });
 
+  it("should find account by name", function(){
+    var testName = "Matthew";
+    var testBalance = 5000;
+    var testType = "savings";
+    myBank.addAccount(testName, testBalance, testType);
+    var foundAccount = myBank.findAccount(testName);
+    assert.equal( testName, foundAccount.name);
+    assert.equal( testBalance, foundAccount.balance);
+    assert.equal( testType, foundAccount.type);
+  });
+
 });
