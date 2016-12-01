@@ -17,4 +17,8 @@ describe( "Account", function(){
     assert.equal( 10000, cookiesAccount.balance );
   });
 
+  it( "should have account type", function(){
+    assert.equal( "business", cookiesAccount.type );
+  });
+
 });
