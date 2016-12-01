@@ -6,7 +6,7 @@ describe( "Account", function(){
   var cookiesAccount = null;
 
   beforeEach( function() {
-    cookiesAccount = new Account( "Cookie" );
+    cookiesAccount = new Account( "Cookie", 10000 );
   });
 
   it("should have name passed in constructor", function(){
