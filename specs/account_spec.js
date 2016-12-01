@@ -13,4 +13,8 @@ describe( "Account", function(){
     assert.equal( "Cookie", cookiesAccount.name );
   });
 
+  it( "should have amount passed in constructor", function() {
+    assert.equal( 10000, cookiesAccount.balance );
+  });
+
 });
