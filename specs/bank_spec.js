@@ -3,31 +3,31 @@ var Bank = require('../bank');
 
 describe( "Bank", function() {
 
-  var myBank = null;
+  var myEmptyBank = null;
 
   beforeEach(function(){
-    myBank = new Bank();
+    myEmptyBank = new Bank();
   });
 
   it( "should have no accounts at start", function() {
-    assert.equal( 0, myBank.accounts.length );
+    assert.equal( 0, myEmptyBank.accounts.length );
   });
 
   it("should have numberOfAccounts equal zero at start", function(){
-    assert.equal( 0, myBank.numberOfAccounts() );
+    assert.equal( 0, myEmptyBank.numberOfAccounts() );
   });
 
   it("should increase numberOfAccounts when account added", function() {
-    myBank.addAccount( "Matthew", 5000, "savings" );
-    assert.equal( 1, myBank.numberOfAccounts() );
+    myEmptyBank.addAccount( "Matthew", 5000, "savings" );
+    assert.equal( 1, myEmptyBank.numberOfAccounts() );
   });
 
   it("should find account by name", function(){
     var testName = "Matthew";
     var testBalance = 5000;
     var testType = "savings";
-    myBank.addAccount(testName, testBalance, testType);
-    var foundAccount = myBank.findAccount(testName);
+    myEmptyBank.addAccount(testName, testBalance, testType);
+    var foundAccount = myEmptyBank.findAccount(testName);
     assert.equal( testName, foundAccount.name);
     assert.equal( testBalance, foundAccount.balance);
     assert.equal( testType, foundAccount.type);
