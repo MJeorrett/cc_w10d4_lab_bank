@@ -1,12 +1,29 @@
 var assert = require('assert');
 var Bank = require('../bank');
+var Account = require('../account');
 
 describe( "Bank", function() {
 
   var myEmptyBank = null;
+  var cookiesAccount = null;
+  var matthewsAccount = null;
+  var marksAccount = null;
+  var terrysAccount = null;
+  var myPopulatedBank = null;
 
   beforeEach(function(){
     myEmptyBank = new Bank();
+    myPopulatedBank = new Bank();
+
+    cookiesAccount = new Account( "Cookie", 123456, "business" );
+    matthewsAccount = new Account( "Matthew", 5000, "pleasure" );
+    marksAccount = new Account( "Mark", 12.50, "savings" );
+    terrysAccount = new Account( "Terry", 134.76, "pleasure" );
+
+    myPopulatedBank.addAccount( cookiesAccount );
+    myPopulatedBank.addAccount( matthewsAccount );
+    myPopulatedBank.addAccount( marksAccount );
+    myPopulatedBank.addAccount( terrysAccount );
   });
 
   it( "should have no accounts at start", function() {
@@ -23,14 +40,13 @@ describe( "Bank", function() {
   });
 
   it("should find account by name", function(){
-    var testName = "Matthew";
-    var testBalance = 5000;
-    var testType = "savings";
-    myEmptyBank.addAccount(testName, testBalance, testType);
-    var foundAccount = myEmptyBank.findAccount(testName);
-    assert.equal( testName, foundAccount.name);
-    assert.equal( testBalance, foundAccount.balance);
-    assert.equal( testType, foundAccount.type);
+    var foundAccount = myPopulatedBank.findAccount( "Matthew" );
+    assert.equal( matthewsAccount, foundAccount );
+  });
+
+  it("should return cookiesAccount from findLargestAccount()", function() {
+    var largestAccount = myPopulatedBank.findLargestAccount();
+    assert.equal( cookiesAccount, foundAccount );
   });
 
 });

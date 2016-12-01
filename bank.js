@@ -10,8 +10,8 @@ Bank.prototype = {
   numberOfAccounts: function() {
     return this.accounts.length;
   },
-  addAccount: function(name, balance, type){
-    var account = new Account( name, balance, type);
+  addAccount: function( account ){
+
     this.accounts.push(account);
   },
   findAccount: function( accountName ) {
