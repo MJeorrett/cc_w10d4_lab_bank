@@ -41,12 +41,12 @@ describe( "Bank", function() {
 
   it("should find account by name", function(){
     var foundAccount = myPopulatedBank.findAccount( "Matthew" );
-    assert.equal( matthewsAccount, foundAccount );
+    assert.deepEqual( matthewsAccount, foundAccount );
   });
 
   it("should return cookiesAccount from findLargestAccount()", function() {
     var largestAccount = myPopulatedBank.findLargestAccount();
-    assert.equal( cookiesAccount, largestAccount );
+    assert.deepEqual( cookiesAccount, largestAccount );
   });
 
 });
