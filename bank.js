@@ -4,4 +4,10 @@ var Bank = function(){
 
 };
 
+Bank.prototype = {
+  numberOfAccounts: function() {
+    return this.accounts.length;
+  }
+};
+
 module.exports = Bank;
