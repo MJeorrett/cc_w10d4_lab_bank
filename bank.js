@@ -1,3 +1,5 @@
+var Account = require('./account');
+
 var Bank = function(){
 
   this.accounts = [];
@@ -7,6 +9,10 @@ var Bank = function(){
 Bank.prototype = {
   numberOfAccounts: function() {
     return this.accounts.length;
+  },
+  addAccount: function(name, balance, type){
+    var account = new Account( name, balance, type);
+    this.accounts.push(account);
   }
 };
 
